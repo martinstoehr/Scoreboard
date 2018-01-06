@@ -1,5 +1,5 @@
 //
-//  EinstellungenViewController.swift
+//  ControllerViewController.swift
 //  Scoreboard
 //
 //  Created by Martin Stöhr on 05.01.18.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class EinstellungenViewController: NSViewController {
+class ControllerViewController: NSViewController {
 
     @IBOutlet var heimScoreTextfield: NSTextField!
     @IBOutlet var gastScoreTextfield: NSTextField!

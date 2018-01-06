@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ScoreboardViewController: NSViewController, NSWindowDelegate  {
+class ScoreboardViewController: NSViewController  {
 
     @IBOutlet var heimScore: VerticallyAlignedTextFieldCell!
     @IBOutlet var gastScore: VerticallyAlignedTextFieldCell!
@@ -29,13 +29,16 @@ class ScoreboardViewController: NSViewController, NSWindowDelegate  {
         
     }
     
-    func windowDidResize(_ notification: Notification) {
-        print("resize")
-    }
-    
-    func windowWillResize(_ sender: NSWindow, to frameSize: NSSize) -> NSSize {
-        print("resize")
-        return frameSize
+    override func viewDidAppear() {
+        
+//        let presOptions: NSApplication.PresentationOptions = [.autoHideMenuBar, .hideDock , .fullScreen, .autoHideToolbar]
+//        //let presOptions: NSApplication.PresentationOptions = []
+//        
+//        let optionsDictionary = [NSView.FullScreenModeOptionKey.fullScreenModeApplicationPresentationOptions:presOptions.rawValue]
+//        
+//        self.view.enterFullScreenMode(NSScreen.main!, withOptions:optionsDictionary)
+//        self.view.wantsLayer = true
+        
     }
 
     override var representedObject: Any? {

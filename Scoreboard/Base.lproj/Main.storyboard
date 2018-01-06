@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="fHp-pl-2Ty">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <plugIn identifier="com.apple.imagekit.ibplugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,7 +61,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Ablage" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="Einstellungen öffnen" keyEquivalent="e" id="IAo-SY-fd9">
+                                        <menuItem title="Controller öffnen" keyEquivalent="e" id="IAo-SY-fd9">
                                             <connections>
                                                 <segue destination="fHp-pl-2Ty" kind="show" id="IND-Tt-TZn"/>
                                             </connections>
@@ -184,7 +185,7 @@
         <scene sceneID="dnN-7K-yi0">
             <objects>
                 <windowController id="fHp-pl-2Ty" sceneMemberID="viewController">
-                    <window key="window" title="Scoreboard Einstellungen" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="y3k-iy-KLI">
+                    <window key="window" title="Controller" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="y3k-iy-KLI">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
                         <rect key="contentRect" x="85" y="552" width="480" height="270"/>
@@ -205,10 +206,10 @@
             </objects>
             <point key="canvasLocation" x="90" y="238"/>
         </scene>
-        <!--Einstellungen View Controller-->
+        <!--Controller View Controller-->
         <scene sceneID="S1b-KF-XdJ">
             <objects>
-                <viewController id="OQd-6a-YV6" customClass="EinstellungenViewController" customModule="Scoreboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OQd-6a-YV6" customClass="ControllerViewController" customModule="Scoreboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Rlp-Ki-WsH">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -346,7 +347,7 @@
                                 <rect key="frame" x="211" y="78" width="53" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="mm : ss" id="IGf-D8-daZ">
-                                    <font key="font" metaFont="system" size="11"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -374,11 +375,11 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5u-rx-w7g">
-                                <rect key="frame" x="417" y="13" width="49" height="32"/>
+                                <rect key="frame" x="346" y="13" width="120" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="0:0" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sds-GX-QDC">
+                                <buttonCell key="cell" type="push" title="Scoreboard öffnen" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sds-GX-QDC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                                 <connections>
                                     <segue destination="B8D-0N-5wS" kind="show" id="xHO-Kq-QJY"/>
@@ -413,7 +414,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <ikImageView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uiu-bi-hge">
+                            <ikImageView wantsLayer="YES" fixedFrame="YES" zoomFactor="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="uiu-bi-hge">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>

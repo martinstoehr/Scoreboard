@@ -123,7 +123,7 @@
 "I0S-gh-46l.title" = "Subscript";
 
 /* Class = "NSMenuItem"; title = "Open…"; ObjectID = "IAo-SY-fd9"; */
-"IAo-SY-fd9.title" = "Einstellungen öffnen";
+"IAo-SY-fd9.title" = "Controller öffnen";
 
 /* Class = "NSWindow"; title = "Scoreboard"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "Scoreboard";
@@ -410,8 +410,8 @@
 /* Class = "NSMenuItem"; title = "Speech"; ObjectID = "xrE-MZ-jX0"; */
 "xrE-MZ-jX0.title" = "Speech";
 
-/* Class = "NSWindow"; title = "Scoreboard Einstellungen"; ObjectID = "y3k-iy-KLI"; */
-"y3k-iy-KLI.title" = "Scoreboard Einstellungen";
+/* Class = "NSWindow"; title = "Controller"; ObjectID = "y3k-iy-KLI"; */
+"y3k-iy-KLI.title" = "Controller";
 
 /* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "z6F-FW-3nz"; */
 "z6F-FW-3nz.title" = "Show Substitutions";
