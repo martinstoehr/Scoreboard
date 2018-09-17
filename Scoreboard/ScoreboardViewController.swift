@@ -15,29 +15,17 @@ class ScoreboardViewController: NSViewController  {
     @IBOutlet var timeLabel: VerticallyAlignedTextFieldCell!
     
     var count: Int = 0
-    var countdown: Timer?
+//    var countdown: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(timerSet), name: NSNotification.Name(rawValue: "timerSet"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(timerStart), name: NSNotification.Name(rawValue: "timerStart"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(timerStop), name: NSNotification.Name(rawValue: "timerStop"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(timerStart), name: NSNotification.Name(rawValue: "timerStart"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(timerStop), name: NSNotification.Name(rawValue: "timerStop"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(heimSet), name: NSNotification.Name(rawValue: "heimSet"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(gastSet), name: NSNotification.Name(rawValue: "gastSet"), object: nil)
-        
-    }
-    
-    override func viewDidAppear() {
-        
-//        let presOptions: NSApplication.PresentationOptions = [.autoHideMenuBar, .hideDock , .fullScreen, .autoHideToolbar]
-//        //let presOptions: NSApplication.PresentationOptions = []
-//        
-//        let optionsDictionary = [NSView.FullScreenModeOptionKey.fullScreenModeApplicationPresentationOptions:presOptions.rawValue]
-//        
-//        self.view.enterFullScreenMode(NSScreen.main!, withOptions:optionsDictionary)
-//        self.view.wantsLayer = true
         
     }
 
@@ -47,19 +35,6 @@ class ScoreboardViewController: NSViewController  {
             
         }
     }
-    
-//    override func keyDown(with event: NSEvent) {
-//        print("key ")
-//        if (event.keyCode == 6) {
-//            print("Y")
-//        } else if (event.keyCode == 7) {
-//            print("X")
-//        } else if (event.keyCode == 45) {
-//            print("N")
-//        } else if (event.keyCode == 46) {
-//            print("M")
-//        }
-//    }
     
     @objc func heimSet(_ notification: NSNotification) {
         let score = (notification.userInfo?["score"] as? Int)!
@@ -80,26 +55,26 @@ class ScoreboardViewController: NSViewController  {
         timeLabel.stringValue = minutes + ":" + seconds
     }
     
-    @objc func timerStart() {
-        print("start Timer")
-        countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(ScoreboardViewController.update)), userInfo: nil, repeats: true)
-    }
+//    @objc func timerStart() {
+//        print("start Timer")
+//        countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(ScoreboardViewController.update)), userInfo: nil, repeats: true)
+//    }
+//
+//    @objc func timerStop() {
+//        print("stop Timer")
+//        countdown?.invalidate()
+//    }
     
-    @objc func timerStop() {
-        print("stop Timer")
-        countdown?.invalidate()
-    }
-    
-    @objc func update() {
-        
-        if(count > 0){
-            let minutes = String(format: "%02d", count / 60)
-            let seconds = String(format: "%02d", count % 60)
-            timeLabel.stringValue = minutes + ":" + seconds
-            count = count - 1
-        }
-        
-    }
+//    @objc func update() {
+//        
+//        if(count > 0){
+//            let minutes = String(format: "%02d", count / 60)
+//            let seconds = String(format: "%02d", count % 60)
+//            timeLabel.stringValue = minutes + ":" + seconds
+//            count = count - 1
+//        }
+//        
+//    }
 
 
 }

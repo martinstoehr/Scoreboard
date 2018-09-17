@@ -23,11 +23,37 @@ class ControllerViewController: NSViewController {
     @IBOutlet var timeStopButton: NSButton!
     @IBOutlet var resetButton: NSButton!
     
+    var count: Int = 0
+    var countdown: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     
-        self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: "ScoreboardSegue"), sender: nil)
+        self.performSegue(withIdentifier: "ScoreboardSegue", sender: nil)
+    }
+    
+    func timerStart() {
+        
+    }
+    
+    func timerStop() {
+        print("stop Timer")
+        countdown?.invalidate()
+    }
+    
+    @objc func update() {
+        
+        if(count >= 0){
+            let mm = count / 60
+            let ss = count % 60
+            let timerTotal = mm * 60 + ss
+            let timerDict:[String: Int] = ["timer": timerTotal]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerSet"), object: nil, userInfo: timerDict)
+            count = count - 1
+            print("Counter: %@", count)
+        }
+        
     }
     
     @IBAction func heimPlusAction(_ sender: Any) {
@@ -77,7 +103,10 @@ class ControllerViewController: NSViewController {
     }
     
     @IBAction func timeStartAction(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStart"), object: nil)
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStart"), object: nil)
+        print("start Timer")
+        countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(ControllerViewController.update)), userInfo: nil, repeats: true)
+        
     }
     
     @IBAction func timeStopAction(_ sender: Any) {
