@@ -29,18 +29,13 @@ class ControllerViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-    
-        self.performSegue(withIdentifier: "ScoreboardSegue", sender: nil)
+
     }
     
-    func timerStart() {
-        
+    override func viewDidAppear() {
+        self.performSegue(withIdentifier: "ScoreboardSegue", sender: self)
     }
     
-    func timerStop() {
-        print("stop Timer")
-        countdown?.invalidate()
-    }
     
     @objc func update() {
         
@@ -51,7 +46,9 @@ class ControllerViewController: NSViewController {
             let timerDict:[String: Int] = ["timer": timerTotal]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerSet"), object: nil, userInfo: timerDict)
             count = count - 1
-            print("Counter: %@", count)
+            print("Counter: ", count)
+        } else {
+            countdown?.invalidate()
         }
         
     }
@@ -100,6 +97,7 @@ class ControllerViewController: NSViewController {
         let timerTotal = mm! * 60 + ss!
         let timerDict:[String: Int] = ["timer": timerTotal]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerSet"), object: nil, userInfo: timerDict)
+        count = timerTotal
     }
     
     @IBAction func timeStartAction(_ sender: Any) {
@@ -110,10 +108,15 @@ class ControllerViewController: NSViewController {
     }
     
     @IBAction func timeStopAction(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStop"), object: nil)
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStop"), object: nil)
+        print("stop Timer")
+        countdown?.invalidate()
     }
 
     @IBAction func resetAction(_ sender: Any) {
+        
+        countdown?.invalidate()
+        
         self.heimScoreTextfield.stringValue = String(format: "%01d", 0)
         self.gastScoreTextfield.stringValue = String(format: "%01d", 0)
         self.timeMinutenTextfield.stringValue = String(format: "%02d", 12)

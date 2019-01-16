@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5B68B8271FFFFE6E00B6C77D /* ControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68B8261FFFFE6E00B6C77D /* ControllerViewController.swift */; };
+		5B79734B21EF24A300EA8FAA /* digital-7 (italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B79734721EF24A300EA8FAA /* digital-7 (italic).ttf */; };
+		5B79734C21EF24A300EA8FAA /* digital-7 (mono italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B79734821EF24A300EA8FAA /* digital-7 (mono italic).ttf */; };
+		5B79734D21EF24A300EA8FAA /* digital-7 (mono).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B79734921EF24A300EA8FAA /* digital-7 (mono).ttf */; };
+		5B79734E21EF24A300EA8FAA /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B79734A21EF24A300EA8FAA /* digital-7.ttf */; };
 		5B79FFA81FE415C200E27EC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79FFA71FE415C200E27EC6 /* AppDelegate.swift */; };
 		5B79FFAA1FE415C200E27EC6 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79FFA91FE415C200E27EC6 /* ScoreboardViewController.swift */; };
 		5B79FFAC1FE415C200E27EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B79FFAB1FE415C200E27EC6 /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 /* Begin PBXFileReference section */
 		5B68B8251FFFFCF600B6C77D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		5B68B8261FFFFE6E00B6C77D /* ControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewController.swift; sourceTree = "<group>"; };
+		5B79734721EF24A300EA8FAA /* digital-7 (italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (italic).ttf"; sourceTree = "<group>"; };
+		5B79734821EF24A300EA8FAA /* digital-7 (mono italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono italic).ttf"; sourceTree = "<group>"; };
+		5B79734921EF24A300EA8FAA /* digital-7 (mono).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono).ttf"; sourceTree = "<group>"; };
+		5B79734A21EF24A300EA8FAA /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
 		5B79FFA41FE415C200E27EC6 /* Scoreboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoreboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B79FFA71FE415C200E27EC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B79FFA91FE415C200E27EC6 /* ScoreboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B79734621EF248900EA8FAA /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5B79734721EF24A300EA8FAA /* digital-7 (italic).ttf */,
+				5B79734821EF24A300EA8FAA /* digital-7 (mono italic).ttf */,
+				5B79734921EF24A300EA8FAA /* digital-7 (mono).ttf */,
+				5B79734A21EF24A300EA8FAA /* digital-7.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		5B79FF9B1FE415C200E27EC6 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +118,7 @@
 		5B79FFA61FE415C200E27EC6 /* Scoreboard */ = {
 			isa = PBXGroup;
 			children = (
+				5B79734621EF248900EA8FAA /* fonts */,
 				5B79FFA71FE415C200E27EC6 /* AppDelegate.swift */,
 				5B79FFA91FE415C200E27EC6 /* ScoreboardViewController.swift */,
 				5B68B8261FFFFE6E00B6C77D /* ControllerViewController.swift */,
@@ -239,6 +259,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B79FFAC1FE415C200E27EC6 /* Assets.xcassets in Resources */,
+				5B79734E21EF24A300EA8FAA /* digital-7.ttf in Resources */,
+				5B79734C21EF24A300EA8FAA /* digital-7 (mono italic).ttf in Resources */,
+				5B79734B21EF24A300EA8FAA /* digital-7 (italic).ttf in Resources */,
+				5B79734D21EF24A300EA8FAA /* digital-7 (mono).ttf in Resources */,
 				5B79FFAF1FE415C200E27EC6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

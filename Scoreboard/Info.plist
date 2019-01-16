@@ -30,5 +30,14 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>digital-7 (italic).ttf</string>
+		<string>digital-7 (mono italic).ttf</string>
+		<string>digital-7 (mono).ttf</string>
+		<string>digital-7.ttf</string>
+	</array>
+	<key>ATSApplicationFontsPath</key>
+	<string>fonts</string>
 </dict>
 </plist>
