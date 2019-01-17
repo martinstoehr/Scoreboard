@@ -39,13 +39,13 @@ class ControllerViewController: NSViewController {
     
     @objc func update() {
         
+        count = count - 1
         if(count >= 0){
             let mm = count / 60
             let ss = count % 60
             let timerTotal = mm * 60 + ss
             let timerDict:[String: Int] = ["timer": timerTotal]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerSet"), object: nil, userInfo: timerDict)
-            count = count - 1
             print("Counter: ", count)
         } else {
             countdown?.invalidate()

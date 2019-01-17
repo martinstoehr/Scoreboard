@@ -18,6 +18,9 @@
 		5B79FFAF1FE415C200E27EC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B79FFAD1FE415C200E27EC6 /* Main.storyboard */; };
 		5B79FFBB1FE415C300E27EC6 /* ScoreboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79FFBA1FE415C300E27EC6 /* ScoreboardTests.swift */; };
 		5B79FFC61FE415C300E27EC6 /* ScoreboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79FFC51FE415C300E27EC6 /* ScoreboardUITests.swift */; };
+		5BB469C921EF3372006D7564 /* Digital Dismay.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB469C821EF3372006D7564 /* Digital Dismay.otf */; };
+		5BB469CB21EF34A8006D7564 /* CursedTimerULiL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB469CA21EF34A8006D7564 /* CursedTimerULiL.ttf */; };
+		5BB469CD21EF36E1006D7564 /* digital_display.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB469CC21EF36E1006D7564 /* digital_display.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		5B79FFC11FE415C300E27EC6 /* ScoreboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B79FFC51FE415C300E27EC6 /* ScoreboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardUITests.swift; sourceTree = "<group>"; };
 		5B79FFC71FE415C300E27EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB469C821EF3372006D7564 /* Digital Dismay.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Digital Dismay.otf"; sourceTree = "<group>"; };
+		5BB469CA21EF34A8006D7564 /* CursedTimerULiL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CursedTimerULiL.ttf; sourceTree = "<group>"; };
+		5BB469CC21EF36E1006D7564 /* digital_display.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital_display.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,9 @@
 		5B79734621EF248900EA8FAA /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5BB469CC21EF36E1006D7564 /* digital_display.ttf */,
+				5BB469CA21EF34A8006D7564 /* CursedTimerULiL.ttf */,
+				5BB469C821EF3372006D7564 /* Digital Dismay.otf */,
 				5B79734721EF24A300EA8FAA /* digital-7 (italic).ttf */,
 				5B79734821EF24A300EA8FAA /* digital-7 (mono italic).ttf */,
 				5B79734921EF24A300EA8FAA /* digital-7 (mono).ttf */,
@@ -259,8 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B79FFAC1FE415C200E27EC6 /* Assets.xcassets in Resources */,
+				5BB469C921EF3372006D7564 /* Digital Dismay.otf in Resources */,
 				5B79734E21EF24A300EA8FAA /* digital-7.ttf in Resources */,
 				5B79734C21EF24A300EA8FAA /* digital-7 (mono italic).ttf in Resources */,
+				5BB469CB21EF34A8006D7564 /* CursedTimerULiL.ttf in Resources */,
+				5BB469CD21EF36E1006D7564 /* digital_display.ttf in Resources */,
 				5B79734B21EF24A300EA8FAA /* digital-7 (italic).ttf in Resources */,
 				5B79734D21EF24A300EA8FAA /* digital-7 (mono).ttf in Resources */,
 				5B79FFAF1FE415C200E27EC6 /* Main.storyboard in Resources */,
@@ -459,6 +471,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KYWPTS8MJC;
 				INFOPLIST_FILE = Scoreboard/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinstoehr.Scoreboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -475,6 +488,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KYWPTS8MJC;
 				INFOPLIST_FILE = Scoreboard/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinstoehr.Scoreboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
