@@ -10,6 +10,9 @@ import Cocoa
 
 class ScoreboardViewController: NSViewController  {
 
+    @IBOutlet var heimTextfield: NSTextField!
+    @IBOutlet var gastTextfield: NSTextField!
+    
     @IBOutlet var heimScore: VerticallyAlignedTextFieldCell!
     @IBOutlet var gastScore: VerticallyAlignedTextFieldCell!
     @IBOutlet var timeLabel: VerticallyAlignedTextFieldCell!
@@ -23,6 +26,8 @@ class ScoreboardViewController: NSViewController  {
         NotificationCenter.default.addObserver(self, selector: #selector(timerSet), name: NSNotification.Name(rawValue: "timerSet"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(heimSet), name: NSNotification.Name(rawValue: "heimSet"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(gastSet), name: NSNotification.Name(rawValue: "gastSet"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(textSet), name: NSNotification.Name(rawValue: "textSet"), object: nil)
         
     }
 
@@ -50,6 +55,14 @@ class ScoreboardViewController: NSViewController  {
         let minutes = String(format: "%02d", count / 60)
         let seconds = String(format: "%02d", count % 60)
         timeLabel.stringValue = minutes + ":" + seconds
+    }
+    
+    @objc func textSet(_ notification: NSNotification) {
+        print("set Text")
+        let heimText = (notification.userInfo?["heim"] as? String)!
+        let gastText = (notification.userInfo?["gast"] as? String)!
+        self.heimTextfield.stringValue = heimText
+        self.gastTextfield.stringValue = gastText
     }
 
 

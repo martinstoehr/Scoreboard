@@ -10,6 +10,8 @@ import Cocoa
 
 class ControllerViewController: NSViewController {
 
+    @IBOutlet var heimTextfield: NSTextField!
+    @IBOutlet var gastTextfield: NSTextField!
     @IBOutlet var heimScoreTextfield: NSTextField!
     @IBOutlet var gastScoreTextfield: NSTextField!
     @IBOutlet var timeMinutenTextfield: NSTextField!
@@ -96,7 +98,9 @@ class ControllerViewController: NSViewController {
         let ss = Int(self.timeSekundenTextfield.stringValue)
         let timerTotal = mm! * 60 + ss!
         let timerDict:[String: Int] = ["timer": timerTotal]
+        let textDict:[String: String] = ["heim": self.heimTextfield.stringValue, "gast": self.gastTextfield.stringValue]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerSet"), object: nil, userInfo: timerDict)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "textSet"), object: nil, userInfo: textDict)
         count = timerTotal
     }
     
@@ -117,6 +121,8 @@ class ControllerViewController: NSViewController {
         
         countdown?.invalidate()
         
+        self.heimTextfield.stringValue = "Heim"
+        self.gastTextfield.stringValue = "Gast"
         self.heimScoreTextfield.stringValue = String(format: "%01d", 0)
         self.gastScoreTextfield.stringValue = String(format: "%01d", 0)
         self.timeMinutenTextfield.stringValue = String(format: "%02d", 12)
