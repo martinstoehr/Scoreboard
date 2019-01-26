@@ -13,9 +13,10 @@ class ScoreboardViewController: NSViewController  {
     @IBOutlet var heimTextfield: NSTextField!
     @IBOutlet var gastTextfield: NSTextField!
     
-    @IBOutlet var heimScore: VerticallyAlignedTextFieldCell!
-    @IBOutlet var gastScore: VerticallyAlignedTextFieldCell!
-    @IBOutlet var timeLabel: VerticallyAlignedTextFieldCell!
+    @IBOutlet var heimScore: NSTextField!
+    @IBOutlet var gastScore: NSTextField!
+    @IBOutlet var timeLabel: NSTextField!
+    @IBOutlet var timeStatusImage: NSImageView!
     
     var count: Int = 0
     
@@ -26,8 +27,9 @@ class ScoreboardViewController: NSViewController  {
         NotificationCenter.default.addObserver(self, selector: #selector(timerSet), name: NSNotification.Name(rawValue: "timerSet"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(heimSet), name: NSNotification.Name(rawValue: "heimSet"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(gastSet), name: NSNotification.Name(rawValue: "gastSet"), object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(textSet), name: NSNotification.Name(rawValue: "textSet"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(timerStarted), name: NSNotification.Name(rawValue: "timerStarted"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(timerStopped), name: NSNotification.Name(rawValue: "timerStopped"), object: nil)
         
     }
 
@@ -64,12 +66,14 @@ class ScoreboardViewController: NSViewController  {
         self.heimTextfield.stringValue = heimText
         self.gastTextfield.stringValue = gastText
     }
-
-
-}
-class VerticallyAlignedTextFieldCell: NSTextFieldCell {
-    override func drawingRect(forBounds rect: NSRect) -> NSRect {
-        let newRect = NSRect(x: 0, y: (rect.size.height - 22) / 2, width: rect.size.width, height: 22)
-        return super.drawingRect(forBounds: newRect)
+    
+    @objc func timerStarted(_ notification: NSNotification) {
+        self.timeStatusImage.image = NSImage(named: "play")
     }
+    
+    @objc func timerStopped(_ notification: NSNotification) {
+        self.timeStatusImage.image = NSImage(named: "pause")
+    }
+
+
 }

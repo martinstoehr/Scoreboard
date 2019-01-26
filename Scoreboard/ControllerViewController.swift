@@ -24,13 +24,19 @@ class ControllerViewController: NSViewController {
     @IBOutlet var timeStartButton: NSButton!
     @IBOutlet var timeStopButton: NSButton!
     @IBOutlet var resetButton: NSButton!
+    @IBOutlet var timeControlTextfield: NSTextField!
+    @IBOutlet var settingCountdownButton: NSButton!
+    @IBOutlet var settingTimerButton: NSButton!
     
     var count: Int = 0
     var countdown: Timer?
+    var countFactor: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(timerSet), name: NSNotification.Name(rawValue: "timerSet"), object: nil)
 
     }
     
@@ -41,7 +47,7 @@ class ControllerViewController: NSViewController {
     
     @objc func update() {
         
-        count = count - 1
+        count = count + countFactor
         if(count >= 0){
             let mm = count / 60
             let ss = count % 60
@@ -50,6 +56,7 @@ class ControllerViewController: NSViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerSet"), object: nil, userInfo: timerDict)
             print("Counter: ", count)
         } else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStopped"), object: nil, userInfo: nil)
             countdown?.invalidate()
         }
         
@@ -105,20 +112,21 @@ class ControllerViewController: NSViewController {
     }
     
     @IBAction func timeStartAction(_ sender: Any) {
-        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStart"), object: nil)
         print("start Timer")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStarted"), object: nil, userInfo: nil)
         countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(ControllerViewController.update)), userInfo: nil, repeats: true)
         
     }
     
     @IBAction func timeStopAction(_ sender: Any) {
-        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStop"), object: nil)
         print("stop Timer")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStopped"), object: nil, userInfo: nil)
         countdown?.invalidate()
     }
 
     @IBAction func resetAction(_ sender: Any) {
         
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStopped"), object: nil, userInfo: nil)
         countdown?.invalidate()
         
         self.heimTextfield.stringValue = "Heim"
@@ -135,5 +143,21 @@ class ControllerViewController: NSViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gastSet"), object: nil, userInfo: gastDict)
     }
     
+    @IBAction func radioSettingChanged(_ sender: NSButton) {
+        
+        if settingCountdownButton.state == NSControl.StateValue.on {
+            countFactor = -1
+        } else if settingTimerButton.state == NSControl.StateValue.on {
+            countFactor = 1
+        }
+        
+    }
+    
+    @objc func timerSet(_ notification: NSNotification) {
+        count = (notification.userInfo?["timer"] as? Int)!
+        let minutes = String(format: "%02d", count / 60)
+        let seconds = String(format: "%02d", count % 60)
+        timeControlTextfield.stringValue = minutes + ":" + seconds
+    }
     
 }
