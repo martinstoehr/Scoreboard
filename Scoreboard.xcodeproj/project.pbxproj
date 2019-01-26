@@ -25,10 +25,6 @@
 		5B79FFAE1FE415C200E27EC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B79FFB01FE415C200E27EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B79FFB11FE415C200E27EC6 /* Scoreboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Scoreboard.entitlements; sourceTree = "<group>"; };
-		5B79FFBA1FE415C300E27EC6 /* ScoreboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTests.swift; sourceTree = "<group>"; };
-		5B79FFBC1FE415C300E27EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B79FFC51FE415C300E27EC6 /* ScoreboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardUITests.swift; sourceTree = "<group>"; };
-		5B79FFC71FE415C300E27EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB469CC21EF36E1006D7564 /* digital_display.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital_display.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,8 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				5B79FFA61FE415C200E27EC6 /* Scoreboard */,
-				5B79FFB91FE415C300E27EC6 /* ScoreboardTests */,
-				5B79FFC41FE415C300E27EC6 /* ScoreboardUITests */,
 				5B79FFA51FE415C200E27EC6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,24 +76,6 @@
 				5B79FFB11FE415C200E27EC6 /* Scoreboard.entitlements */,
 			);
 			path = Scoreboard;
-			sourceTree = "<group>";
-		};
-		5B79FFB91FE415C300E27EC6 /* ScoreboardTests */ = {
-			isa = PBXGroup;
-			children = (
-				5B79FFBA1FE415C300E27EC6 /* ScoreboardTests.swift */,
-				5B79FFBC1FE415C300E27EC6 /* Info.plist */,
-			);
-			path = ScoreboardTests;
-			sourceTree = "<group>";
-		};
-		5B79FFC41FE415C300E27EC6 /* ScoreboardUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5B79FFC51FE415C300E27EC6 /* ScoreboardUITests.swift */,
-				5B79FFC71FE415C300E27EC6 /* Info.plist */,
-			);
-			path = ScoreboardUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
