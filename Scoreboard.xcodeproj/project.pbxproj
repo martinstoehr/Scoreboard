@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B34CBED21FCDC59000E854E /* EinstellungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B34CBEB21FCDC59000E854E /* EinstellungenViewController.swift */; };
+		5B384B1121FCF85400D39452 /* Einstellungen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B384B1021FCF85400D39452 /* Einstellungen.swift */; };
 		5B68B8271FFFFE6E00B6C77D /* ControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68B8261FFFFE6E00B6C77D /* ControllerViewController.swift */; };
 		5B79FFA81FE415C200E27EC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79FFA71FE415C200E27EC6 /* AppDelegate.swift */; };
 		5B79FFAA1FE415C200E27EC6 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79FFA91FE415C200E27EC6 /* ScoreboardViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B34CBEB21FCDC59000E854E /* EinstellungenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinstellungenViewController.swift; sourceTree = "<group>"; };
+		5B384B1021FCF85400D39452 /* Einstellungen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Einstellungen.swift; sourceTree = "<group>"; };
 		5B68B8251FFFFCF600B6C77D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		5B68B8261FFFFE6E00B6C77D /* ControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewController.swift; sourceTree = "<group>"; };
 		5B79FFA41FE415C200E27EC6 /* Scoreboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoreboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +74,8 @@
 				5B79FFA71FE415C200E27EC6 /* AppDelegate.swift */,
 				5B79FFA91FE415C200E27EC6 /* ScoreboardViewController.swift */,
 				5B68B8261FFFFE6E00B6C77D /* ControllerViewController.swift */,
+				5B34CBEB21FCDC59000E854E /* EinstellungenViewController.swift */,
+				5B384B1021FCF85400D39452 /* Einstellungen.swift */,
 				5B79FFAB1FE415C200E27EC6 /* Assets.xcassets */,
 				5B79FFAD1FE415C200E27EC6 /* Main.storyboard */,
 				5B79FFB01FE415C200E27EC6 /* Info.plist */,
@@ -151,9 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B34CBED21FCDC59000E854E /* EinstellungenViewController.swift in Sources */,
 				5B79FFAA1FE415C200E27EC6 /* ScoreboardViewController.swift in Sources */,
 				5B79FFA81FE415C200E27EC6 /* AppDelegate.swift in Sources */,
 				5B68B8271FFFFE6E00B6C77D /* ControllerViewController.swift in Sources */,
+				5B384B1121FCF85400D39452 /* Einstellungen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +300,7 @@
 				CODE_SIGN_ENTITLEMENTS = Scoreboard/Scoreboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = S4WK7AS9DB;
+				DEVELOPMENT_TEAM = KYWPTS8MJC;
 				INFOPLIST_FILE = Scoreboard/Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,7 +320,7 @@
 				CODE_SIGN_ENTITLEMENTS = Scoreboard/Scoreboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = S4WK7AS9DB;
+				DEVELOPMENT_TEAM = KYWPTS8MJC;
 				INFOPLIST_FILE = Scoreboard/Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

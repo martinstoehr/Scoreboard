@@ -32,9 +32,14 @@ class ControllerViewController: NSViewController {
     var countdown: Timer?
     var countFactor: Int = -1
     
+    var prefs = Einstellungen()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        timeMinutenTextfield.stringValue = String(format: "%02.0f", prefs.defaultMinuten)
+        timeSekundenTextfield.stringValue = String(format: "%02.0f", prefs.defaultSekunden)
         
         NotificationCenter.default.addObserver(self, selector: #selector(timerSet), name: NSNotification.Name(rawValue: "timerSet"), object: nil)
 
