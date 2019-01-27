@@ -7,9 +7,12 @@
 //
 
 import Cocoa
+import AVFoundation
 
 class ControllerViewController: NSViewController {
 
+    var sound: AVAudioPlayer?
+    
     @IBOutlet var heimTextfield: NSTextField!
     @IBOutlet var gastTextfield: NSTextField!
     @IBOutlet var heimScoreTextfield: NSTextField!
@@ -27,6 +30,7 @@ class ControllerViewController: NSViewController {
     @IBOutlet var timeControlTextfield: NSTextField!
     @IBOutlet var settingCountdownButton: NSButton!
     @IBOutlet var settingTimerButton: NSButton!
+    @IBOutlet var sireneCheckbox: NSButton!
     
     var count: Int = 0
     var countdown: Timer?
@@ -42,6 +46,7 @@ class ControllerViewController: NSViewController {
         timeSekundenTextfield.stringValue = String(format: "%02.0f", prefs.defaultSekunden)
         
         NotificationCenter.default.addObserver(self, selector: #selector(timerSet), name: NSNotification.Name(rawValue: "timerSet"), object: nil)
+        
 
     }
     
@@ -49,6 +54,18 @@ class ControllerViewController: NSViewController {
         self.performSegue(withIdentifier: "ScoreboardSegue", sender: self)
     }
     
+    func playSiren() {
+        
+        let path = Bundle.main.path(forResource: prefs.soundFile, ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+        do {
+            sound = try AVAudioPlayer(contentsOf: url)
+            sound?.play()
+        } catch {
+            print("no soundfile")
+        }
+        
+    }
     
     @objc func update() {
         
@@ -63,6 +80,7 @@ class ControllerViewController: NSViewController {
         } else {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStopped"), object: nil, userInfo: nil)
             countdown?.invalidate()
+            playSiren()
         }
         
     }

@@ -14,6 +14,7 @@ class EinstellungenViewController: NSViewController {
     @IBOutlet var sekundenPresetTextfield: NSTextField!
     @IBOutlet var minutenStepper: NSStepper!
     @IBOutlet var sekundenStepper: NSStepper!
+    @IBOutlet var soundSelectPopup: NSPopUpButton!
     @IBOutlet var versionTextfield: NSTextField!
     
     var prefs = Einstellungen()

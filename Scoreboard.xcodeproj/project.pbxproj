@@ -14,6 +14,8 @@
 		5B79FFAA1FE415C200E27EC6 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79FFA91FE415C200E27EC6 /* ScoreboardViewController.swift */; };
 		5B79FFAC1FE415C200E27EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B79FFAB1FE415C200E27EC6 /* Assets.xcassets */; };
 		5B79FFAF1FE415C200E27EC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B79FFAD1FE415C200E27EC6 /* Main.storyboard */; };
+		5B873C4B21FE6B9000A58B7A /* AirHorn1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5B873C4921FE6B8F00A58B7A /* AirHorn1.wav */; };
+		5B873C4C21FE6B9000A58B7A /* AirHorn2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5B873C4A21FE6B9000A58B7A /* AirHorn2.wav */; };
 		5BB469CD21EF36E1006D7564 /* digital_display.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB469CC21EF36E1006D7564 /* digital_display.ttf */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		5B79FFAE1FE415C200E27EC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B79FFB01FE415C200E27EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B79FFB11FE415C200E27EC6 /* Scoreboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Scoreboard.entitlements; sourceTree = "<group>"; };
+		5B873C4921FE6B8F00A58B7A /* AirHorn1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AirHorn1.wav; sourceTree = "<group>"; };
+		5B873C4A21FE6B9000A58B7A /* AirHorn2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AirHorn2.wav; sourceTree = "<group>"; };
 		5BB469CC21EF36E1006D7564 /* digital_display.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital_display.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +74,7 @@
 		5B79FFA61FE415C200E27EC6 /* Scoreboard */ = {
 			isa = PBXGroup;
 			children = (
+				5B873C4821FE6B5400A58B7A /* sounds */,
 				5B79734621EF248900EA8FAA /* fonts */,
 				5B79FFA71FE415C200E27EC6 /* AppDelegate.swift */,
 				5B79FFA91FE415C200E27EC6 /* ScoreboardViewController.swift */,
@@ -82,6 +87,15 @@
 				5B79FFB11FE415C200E27EC6 /* Scoreboard.entitlements */,
 			);
 			path = Scoreboard;
+			sourceTree = "<group>";
+		};
+		5B873C4821FE6B5400A58B7A /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5B873C4921FE6B8F00A58B7A /* AirHorn1.wav */,
+				5B873C4A21FE6B9000A58B7A /* AirHorn2.wav */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,8 +158,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B873C4B21FE6B9000A58B7A /* AirHorn1.wav in Resources */,
 				5B79FFAC1FE415C200E27EC6 /* Assets.xcassets in Resources */,
 				5BB469CD21EF36E1006D7564 /* digital_display.ttf in Resources */,
+				5B873C4C21FE6B9000A58B7A /* AirHorn2.wav in Resources */,
 				5B79FFAF1FE415C200E27EC6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

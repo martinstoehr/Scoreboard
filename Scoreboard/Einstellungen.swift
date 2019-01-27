@@ -36,4 +36,19 @@ struct Einstellungen {
         }
     }
     
+    static let soundFiles = ["AirHorn1.wav", "AirHorn2.wav"]
+    
+    var soundFile: String {
+        get {
+            let savedSoundFile = UserDefaults.standard.string(forKey: "soundFile")
+            if savedSoundFile != nil {
+                return savedSoundFile!
+            }
+            return Einstellungen.soundFiles[0]
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "soundFile")
+        }
+    }
+    
 }
