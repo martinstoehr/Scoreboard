@@ -45,6 +45,13 @@ class ControllerViewController: NSViewController {
         timeMinutenTextfield.stringValue = String(format: "%02.0f", prefs.defaultMinuten)
         timeSekundenTextfield.stringValue = String(format: "%02.0f", prefs.defaultSekunden)
         
+        let sirenState = prefs.playSound
+        if sirenState {
+            sireneCheckbox.state = NSControl.StateValue.on
+        } else {
+            sireneCheckbox.state = NSControl.StateValue.off
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(timerSet), name: NSNotification.Name(rawValue: "timerSet"), object: nil)
         
 
@@ -80,7 +87,9 @@ class ControllerViewController: NSViewController {
         } else {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStopped"), object: nil, userInfo: nil)
             countdown?.invalidate()
-            playSiren()
+            if prefs.playSound {
+                playSiren()
+            }
         }
         
     }
@@ -181,6 +190,15 @@ class ControllerViewController: NSViewController {
         let minutes = String(format: "%02d", count / 60)
         let seconds = String(format: "%02d", count % 60)
         timeControlTextfield.stringValue = minutes + ":" + seconds
+    }
+    
+    @IBAction func changePlaySoundAction(_ sender: NSButton) {
+        if sireneCheckbox.state == NSControl.StateValue.on {
+            prefs.playSound = true
+        } else {
+            prefs.playSound = false
+        }
+        print("Siren is: ", prefs.playSound)
     }
     
 }

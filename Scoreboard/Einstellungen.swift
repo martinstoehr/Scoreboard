@@ -51,4 +51,14 @@ struct Einstellungen {
         }
     }
     
+    var playSound: Bool {
+        get {
+            let savedPlaySound = UserDefaults.standard.bool(forKey: "playSound")
+            return savedPlaySound
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "playSound")
+        }
+    }
+    
 }

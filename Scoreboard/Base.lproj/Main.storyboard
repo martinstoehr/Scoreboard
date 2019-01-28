@@ -97,7 +97,7 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BpX-F8-4dT">
-                                <rect key="frame" x="112" y="63" width="107" height="25"/>
+                                <rect key="frame" x="112" y="63" width="161" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="vZ5-hv-DNo" id="fQT-Eh-YSd">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -110,6 +110,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="soundFileChangeAction:" target="aIh-Be-nhT" id="skc-Jt-f9r"/>
+                                </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jR-C2-wOZ">
                                 <rect key="frame" x="18" y="68" width="91" height="17"/>
@@ -568,12 +571,15 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeF-eW-js4">
-                                <rect key="frame" x="26" y="49" width="61" height="18"/>
+                                <rect key="frame" x="26" y="25" width="61" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Sirene" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ju2-zU-c5X">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="changePlaySoundAction:" target="OQd-6a-YV6" id="P0l-Ky-V7g"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

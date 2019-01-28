@@ -34,6 +34,10 @@ class EinstellungenViewController: NSViewController {
         minutenPresetTextfield.stringValue = String(format: "%02.0f", prefs.defaultMinuten)
         sekundenPresetTextfield.stringValue = String(format: "%02.0f", prefs.defaultSekunden)
         
+        soundSelectPopup.removeAllItems()
+        soundSelectPopup.addItems(withTitles: Einstellungen.soundFiles)
+        soundSelectPopup.selectItem(withTitle: prefs.soundFile)
+        
     }
     
     @IBAction func minutenChangeAction(_ sender: NSStepper) {
@@ -54,5 +58,11 @@ class EinstellungenViewController: NSViewController {
         
     }
     
+    @IBAction func soundFileChangeAction(_ sender: NSPopUpButton) {
+        
+        let selectedSound = sender.selectedItem
+        prefs.soundFile = (selectedSound?.title)!
+        
+    }
     
 }
