@@ -10,6 +10,8 @@ import Foundation
 
 struct Einstellungen {
     
+    static let soundFiles = ["AirHorn1.wav", "AirHorn2.wav"]
+    
     var defaultMinuten: Double {
         get {
             let savedDefaultMinuten = UserDefaults.standard.double(forKey: "defaultMinuten")
@@ -35,8 +37,6 @@ struct Einstellungen {
             UserDefaults.standard.set(newValue, forKey: "defaultSekunden")
         }
     }
-    
-    static let soundFiles = ["AirHorn1.wav", "AirHorn2.wav"]
     
     var soundFile: String {
         get {
