@@ -42,8 +42,14 @@ class ControllerViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
+        timeStartButton.isEnabled = true
+        timeStopButton.isEnabled = false
+        
         timeMinutenTextfield.stringValue = String(format: "%02.0f", prefs.defaultMinuten)
         timeSekundenTextfield.stringValue = String(format: "%02.0f", prefs.defaultSekunden)
+        
+        let timerTotal = Int(prefs.defaultMinuten) * 60 + Int(prefs.defaultSekunden)
+        let timerDict:[String: Int] = ["timer": timerTotal]
         
         let sirenState = prefs.playSound
         if sirenState {
@@ -54,6 +60,7 @@ class ControllerViewController: NSViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(timerSet), name: NSNotification.Name(rawValue: "timerSet"), object: nil)
         
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerSet"), object: nil, userInfo: timerDict)
 
     }
     
@@ -133,18 +140,23 @@ class ControllerViewController: NSViewController {
     }
     
     @IBAction func timeSetAction(_ sender: Any) {
-        let mm = Int(self.timeMinutenTextfield.stringValue)
-        let ss = Int(self.timeSekundenTextfield.stringValue)
-        let timerTotal = mm! * 60 + ss!
+        let mm = Int(self.timeMinutenTextfield.stringValue) ?? 0
+        let ss = Int(self.timeSekundenTextfield.stringValue) ?? 0
+        let timerTotal = mm * 60 + ss
         let timerDict:[String: Int] = ["timer": timerTotal]
         let textDict:[String: String] = ["heim": self.heimTextfield.stringValue, "gast": self.gastTextfield.stringValue]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerSet"), object: nil, userInfo: timerDict)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "textSet"), object: nil, userInfo: textDict)
         count = timerTotal
+        
+        self.timeMinutenTextfield.stringValue = String(format: "%02d", mm)
+        self.timeSekundenTextfield.stringValue = String(format: "%02d", ss)
     }
     
     @IBAction func timeStartAction(_ sender: Any) {
         print("start Timer")
+        self.timeStartButton.isEnabled = false
+        self.timeStopButton.isEnabled = true
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStarted"), object: nil, userInfo: nil)
         countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(ControllerViewController.update)), userInfo: nil, repeats: true)
         
@@ -152,6 +164,8 @@ class ControllerViewController: NSViewController {
     
     @IBAction func timeStopAction(_ sender: Any) {
         print("stop Timer")
+        self.timeStartButton.isEnabled = true
+        self.timeStopButton.isEnabled = false
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timerStopped"), object: nil, userInfo: nil)
         countdown?.invalidate()
     }
@@ -165,10 +179,11 @@ class ControllerViewController: NSViewController {
         self.gastTextfield.stringValue = "Gast"
         self.heimScoreTextfield.stringValue = String(format: "%01d", 0)
         self.gastScoreTextfield.stringValue = String(format: "%01d", 0)
-        self.timeMinutenTextfield.stringValue = String(format: "%02d", 12)
-        self.timeSekundenTextfield.stringValue = String(format: "%02d", 0)
+        self.timeMinutenTextfield.stringValue = String(format: "%02d", Int(prefs.defaultMinuten))
+        self.timeSekundenTextfield.stringValue = String(format: "%02d", Int(prefs.defaultSekunden))
         
-        self.timeSetAction(self)
+        self.timeSetAction(sender)
+        
         let heimDict:[String: Int] = ["score": 0]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "heimSet"), object: nil, userInfo: heimDict)
         let gastDict:[String: Int] = ["score": 0]
