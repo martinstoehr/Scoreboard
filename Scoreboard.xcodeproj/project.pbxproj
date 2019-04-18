@@ -145,7 +145,7 @@
 				TargetAttributes = {
 					5B79FFA31FE415C200E27EC6 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -157,6 +157,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 5B79FF9B1FE415C200E27EC6;
 			productRefGroup = 5B79FFA51FE415C200E27EC6 /* Products */;
@@ -340,7 +341,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinstoehr.Scoreboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -360,7 +361,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinstoehr.Scoreboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

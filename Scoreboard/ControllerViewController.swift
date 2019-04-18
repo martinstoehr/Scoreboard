@@ -184,6 +184,9 @@ class ControllerViewController: NSViewController {
         
         self.timeSetAction(sender)
         
+        self.timeStartButton.isEnabled = true
+        self.timeStopButton.isEnabled = false
+        
         let heimDict:[String: Int] = ["score": 0]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "heimSet"), object: nil, userInfo: heimDict)
         let gastDict:[String: Int] = ["score": 0]
